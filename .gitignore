@@ -1,0 +1,17 @@
+﻿
+# Credenciais reais
+.env
+
+# Arquivos de sistema e temporários
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências (se usar Composer no futuro)
+vendor/
