@@ -56,9 +56,16 @@ require __DIR__ . '/includes/header.php';
             <?php endif; ?>
         </p>
 
-        <?php /* O botão do carrinho entra na Etapa 5 */ ?>
         <?php if ($estoque > 0): ?>
-            <button type="button" class="btn btn-primary btn-lg" disabled>Adicionar ao carrinho (em breve)</button>
+            <form method="post" action="<?= e(url('carrinho.php')) ?>" class="d-flex flex-wrap gap-2 align-items-center">
+                <?= csrf_campo() ?>
+                <input type="hidden" name="acao" value="adicionar">
+                <input type="hidden" name="produto_id" value="<?= (int) $produto['id'] ?>">
+                <label for="quantidade" class="visually-hidden">Quantidade</label>
+                <input type="number" class="form-control form-control-lg" style="width: 7rem;"
+                       id="quantidade" name="quantidade" value="1" min="1" max="<?= $estoque ?>" required>
+                <button type="submit" class="btn btn-primary btn-lg">Adicionar ao carrinho</button>
+            </form>
         <?php else: ?>
             <button type="button" class="btn btn-secondary btn-lg" disabled>Produto esgotado</button>
         <?php endif; ?>

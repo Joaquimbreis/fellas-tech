@@ -1,6 +1,7 @@
 <?php
 /** Cabeçalho comum a todas as páginas. Defina $titulo antes de incluir. */
-$usuario = usuario_atual();
+$usuario      = usuario_atual();
+$qtdCarrinho  = carrinho_quantidade_total();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="dark">
@@ -20,6 +21,14 @@ $usuario = usuario_atual();
         </button>
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= e(url('carrinho.php')) ?>">
+                        Carrinho
+                        <?php if ($qtdCarrinho > 0): ?>
+                            <span class="badge text-bg-primary"><?= $qtdCarrinho ?></span>
+                        <?php endif; ?>
+                    </a>
+                </li>
                 <?php if ($usuario): ?>
                     <li class="nav-item"><span class="navbar-text">Olá, <?= e($usuario['nome']) ?></span></li>
                     <?php if ($usuario['perfil'] === 'admin'): ?>
