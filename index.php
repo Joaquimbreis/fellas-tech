@@ -43,7 +43,7 @@ require __DIR__ . '/includes/header.php';
         <button type="submit" class="btn btn-primary">Filtrar</button>
     </div>
     <div class="col-6 col-md-1 d-grid">
-        <a class="btn btn-outline-secondary" href="<?= e(url('index.php')) ?>">Limpar</a>
+        <a class="btn btn-outline-light" href="<?= e(url('index.php')) ?>">Limpar</a>
     </div>
 </form>
 
@@ -65,11 +65,11 @@ require __DIR__ . '/includes/header.php';
             ?>
             <div class="col-6 col-md-4 col-lg-3">
                 <div class="card h-100 shadow-sm">
-                    <a href="<?= e($link) ?>" class="ratio ratio-4x3">
-                        <img src="<?= e(imagem_produto($produto['imagem'])) ?>"
-                             alt="<?= e($produto['nome']) ?>"
-                             class="card-img-top object-fit-cover" loading="lazy">
-                    </a>
+            <a href="<?= e($link) ?>" class="ratio ratio-4x3 bg-white rounded-top">
+    <img src="<?= e(imagem_produto($produto['imagem'])) ?>"
+         alt="<?= e($produto['nome']) ?>"
+         class="object-fit-contain p-2" loading="lazy">
+</a>
                     <div class="card-body d-flex flex-column">
                         <span class="badge text-bg-secondary align-self-start mb-2"><?= e($produto['categoria']) ?></span>
                         <h2 class="h6 card-title"><?= e($produto['nome']) ?></h2>
@@ -77,7 +77,7 @@ require __DIR__ . '/includes/header.php';
                         <?php if ($esgotado): ?>
                             <span class="badge text-bg-danger align-self-start mb-2">Esgotado</span>
                         <?php endif; ?>
-                        <a href="<?= e($link) ?>" class="btn btn-outline-primary btn-sm">Ver detalhes</a>
+                        <a href="<?= e($link) ?>" class="btn btn-primary btn-sm">Ver detalhes</a>
                     </div>
                 </div>
             </div>

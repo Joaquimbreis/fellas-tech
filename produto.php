@@ -33,10 +33,10 @@ require __DIR__ . '/includes/header.php';
 
 <div class="row g-4">
     <div class="col-md-6">
-        <div class="ratio ratio-4x3">
-            <img src="<?= e(imagem_produto($produto['imagem'])) ?>" alt="<?= e($produto['nome']) ?>"
-                 class="rounded object-fit-cover">
-        </div>
+       <div class="ratio ratio-4x3 bg-white rounded">
+    <img src="<?= e(imagem_produto($produto['imagem'])) ?>" alt="<?= e($produto['nome']) ?>"
+         class="object-fit-contain p-3">
+</div>
     </div>
     <div class="col-md-6">
         <span class="badge text-bg-secondary mb-2"><?= e($produto['categoria']) ?></span>
