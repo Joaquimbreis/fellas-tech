@@ -31,6 +31,7 @@ $qtdCarrinho  = carrinho_quantidade_total();
                 </li>
                 <?php if ($usuario): ?>
                     <li class="nav-item"><span class="navbar-text">Olá, <?= e($usuario['nome']) ?></span></li>
+                                        <li class="nav-item"><a class="nav-link" href="<?= e(url('meus_pedidos.php')) ?>">Meus pedidos</a></li>
                     <?php if ($usuario['perfil'] === 'admin'): ?>
                         <li class="nav-item"><a class="nav-link" href="<?= e(url('admin/index.php')) ?>">Painel</a></li>
                     <?php endif; ?>
