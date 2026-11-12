@@ -118,8 +118,7 @@ require __DIR__ . '/includes/header.php';
 
     <div class="d-flex flex-wrap justify-content-end gap-2 mt-3">
         <a class="btn btn-outline-light" href="<?= e(url('index.php')) ?>">Continuar comprando</a>
-        <?php /* O botão de finalizar compra entra na Etapa 6 */ ?>
-        <button type="button" class="btn btn-primary" disabled>Finalizar compra (em breve)</button>
+               <a class="btn btn-primary" href="<?= e(url('checkout.php')) ?>">Finalizar compra</a>
     </div>
 <?php endif; ?>
 
