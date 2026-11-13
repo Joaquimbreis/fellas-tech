@@ -105,7 +105,7 @@ require __DIR__ . '/includes/header.php';
     </div>
 
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-3">
-        <form method="post">
+              <form method="post" data-confirmar="Esvaziar todo o carrinho?">
             <?= csrf_campo() ?>
             <input type="hidden" name="acao" value="limpar">
             <button type="submit" class="btn btn-outline-light btn-sm">Esvaziar carrinho</button>

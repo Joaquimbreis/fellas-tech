@@ -1,0 +1,26 @@
+/* Estilos próprios da Fellas Tech (complementam o Bootstrap) */
+
+.navbar-brand {
+    letter-spacing: 0.03em;
+}
+
+/* Cartões da vitrine: levantam levemente ao passar o mouse */
+.card-produto {
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.card-produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+    .card-produto {
+        transition: none;
+    }
+
+    .card-produto:hover {
+        transform: none;
+    }
+}

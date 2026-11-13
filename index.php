@@ -64,7 +64,7 @@ require __DIR__ . '/includes/header.php';
             $esgotado = (int) $produto['estoque'] === 0;
             ?>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow-sm card-produto">
             <a href="<?= e($link) ?>" class="ratio ratio-4x3 bg-white rounded-top">
     <img src="<?= e(imagem_produto($produto['imagem'])) ?>"
          alt="<?= e($produto['nome']) ?>"

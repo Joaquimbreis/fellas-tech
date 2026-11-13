@@ -78,7 +78,8 @@ require __DIR__ . '/../includes/header.php';
                     <div class="d-flex gap-2 justify-content-end">
                         <a class="btn btn-outline-light btn-sm"
                            href="<?= e(url('admin/produto_form.php?id=' . (int) $p['id'])) ?>">Editar</a>
-                        <form method="post">
+                                         <form method="post" data-confirmar="<?= (int) $p['ativo'] === 1 ? 'Desativar este produto? Ele sairá da vitrine.' : 'Reativar este produto?' ?>">
+                     
                             <?= csrf_campo() ?>
                             <input type="hidden" name="acao" value="alternar">
                             <input type="hidden" name="id" value="<?= (int) $p['id'] ?>">
