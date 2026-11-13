@@ -210,15 +210,18 @@ function alternar_produto_ativo(int $id): ?int
 /** Pedidos mais recentes (todos os clientes), com o nome do cliente. */
 function admin_listar_pedidos(int $limite = 200): array
 {
-    return conectar()->query(
+    $stmt = conectar()->prepare(
         'SELECT p.id, p.data_pedido, p.forma_pagamento,
                 CAST(ROUND(p.total * 100) AS UNSIGNED) AS total_centavos,
                 u.nome AS cliente, u.email
          FROM pedidos p
          JOIN usuarios u ON u.id = p.usuario_id
          ORDER BY p.id DESC
-         LIMIT ' . max(1, $limite)
-    )->fetchAll();
+         LIMIT :limite'
+    );
+    $stmt->bindValue(':limite', max(1, $limite), PDO::PARAM_INT);
+    $stmt->execute();
+    return $stmt->fetchAll();
 }
 
 /** Itens de vários pedidos de uma vez, agrupados por pedido: [pedido_id => [item, ...]]. */
