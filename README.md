@@ -158,6 +158,3 @@ erDiagram
 - Pagamento apenas simulado; sem integração com meios de pagamento reais.
 - Em produção: usar HTTPS, desativar `display_errors` e criar um usuário de banco com permissões mínimas.
 
-## Créditos das imagens
-
-[Liste aqui a origem e a licença das fotos dos produtos (por exemplo, Unsplash/Pexels, ou "fotos do autor").]

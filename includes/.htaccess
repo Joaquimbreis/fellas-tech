@@ -1,1 +1,5 @@
 Require all denied
+# Aqui só devem existir imagens: bloqueia a execução de qualquer script
+<FilesMatch "\.(php|phtml|phar|php[0-9])$">
+    Require all denied
+</FilesMatch>
